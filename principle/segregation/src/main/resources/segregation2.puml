@@ -1,0 +1,33 @@
+@startuml
+
+interface ingerface1{
+--
+     operation1():void
+}
+interface ingerface2{
+--
+     operation2():void
+     operation3():void
+}
+interface ingerface3{
+--
+     operation4():void
+     operation5():void
+}
+class B
+class D
+class A
+class C
+
+ingerface1 <|.up. D
+ingerface3 <|.up. D
+ingerface1 <|.up. B
+ingerface2 <|.up. B
+
+
+ingerface1 <.. A
+ingerface2 <.. A
+ingerface1 <.. C
+ingerface3 <.. C
+
+@enduml

@@ -1,0 +1,32 @@
+@startuml
+
+interface ingerface1{
+--
+     operation1():void
+     operation2():void
+     operation3():void
+     operation4():void
+     operation5():void
+
+}
+class B
+class D
+class A
+class C
+
+ingerface1 <|.up. B
+ingerface1 <|.up. D
+
+ingerface1 <.. A
+ingerface1 <.. C
+
+note left of A
+1)A 通过interface1会依赖（使用） B
+2)但是A只会使用到接口的1,2,3三个方法
+end note
+
+note right of C
+1)C 通过interface1会依赖（使用） D
+2)但是C只会使用到接口的1,4,5三个方法
+end note
+@enduml
