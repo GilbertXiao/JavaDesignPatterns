@@ -6,4 +6,4 @@
 |主题|代码位置|
 |:---|:---|
 |单一职责原则|principle/singleResponsibility|
-|接口隔离原则||
+|接口隔离原则|principle/segregation|
