@@ -7,7 +7,7 @@ package com.gilxyj.segregation2;
  * @create: 2020-04-23 01:08
  **/
 public class C {
-    public void depend1(Interface1 inteface){
+    public void depend1(com.gilxyj.segregation2.D inteface){
         inteface.operation1();
     }
 

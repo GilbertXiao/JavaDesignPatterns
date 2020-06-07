@@ -14,5 +14,9 @@ public class SingleResponsibility3 {
         vehicle.run("摩托车");
         vehicle.run("汽车");
         vehicle.runAir("飞机");
+
+        int i = Math.floorMod(-4, 3);
+        System.out.println(i);
+        System.out.println(-3 ^ 3);
     }
 }
