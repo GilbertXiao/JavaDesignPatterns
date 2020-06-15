@@ -1,0 +1,42 @@
+@startuml
+
+class Moto{
+   + void move()
+}
+class GasMoto{
+   + void move()
+}
+class ElectricMoto{
+   + void move()
+}
+class WhiteGasMoto{
+   + void move()
+}
+class BlackGasMoto{
+   + void move()
+}
+class RedGasMoto{
+   + void move()
+}
+class WhiteElectricMoto{
+   + void move()
+}
+class BlackElectricMoto{
+   + void move()
+}
+class RedElectricMoto{
+   + void move()
+}
+
+Moto <|-- GasMoto
+Moto <|-- ElectricMoto
+
+GasMoto <|-- WhiteGasMoto
+GasMoto <|-- BlackGasMoto
+GasMoto <|-- RedGasMoto
+
+ElectricMoto<|-- WhiteElectricMoto
+ElectricMoto<|-- BlackElectricMoto
+ElectricMoto<|-- RedElectricMoto
+
+@enduml

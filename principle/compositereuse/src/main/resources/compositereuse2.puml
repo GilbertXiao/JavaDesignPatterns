@@ -1,0 +1,40 @@
+@startuml
+
+
+class Moto{
+   - Color color
+   + Moto(Color color)
+   + void move()
+}
+
+class GasMoto{
+   + void move()
+}
+
+
+class ElectricMoto{
+   + void move()
+}
+
+
+
+Moto o-- Color
+
+class White
+
+class Black
+
+class Red
+
+Moto <|-- GasMoto
+Moto <|-- ElectricMoto
+
+Color<|.. White
+Color<|.. Black
+Color<|.. Red
+
+interface Color{
+}
+
+
+@enduml

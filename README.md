@@ -9,3 +9,6 @@
 |依赖倒转原则|principle/dependencyreverse|
 |里氏替换原则|principle/liskov|
 |开闭原则|principle/openclose|
+|迪米特法则|principle/demeter|
+|合成复用原则|principle/openclose|
+|单例原则|singleton|
