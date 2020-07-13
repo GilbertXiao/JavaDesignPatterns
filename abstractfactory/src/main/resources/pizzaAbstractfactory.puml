@@ -1,0 +1,86 @@
+@startuml
+
+interface PizzaIngredientFactory{
+    + Sauce createSauce()
+    + Cheese createCheese()
+    + Veggies[] createVeggies()
+}
+
+interface Sauce
+interface Cheese
+interface Veggies
+
+class NYPizzaIngredientFactory{
+    + Sauce createSauce()
+    + Cheese createCheese()
+    + Veggies[] createVeggies()
+}
+
+class ChicagoPizzaIngredientFactory{
+    + Sauce createSauce()
+    + Cheese createCheese()
+    + Veggies[] createVeggies()
+}
+
+class NYPizzaStore{
+    + Pizza createPizza
+}
+
+class TomatoSauce
+class SweetTomatoSauce
+class MozzarellaCheese
+class KoreaCheese
+
+
+
+
+
+PizzaIngredientFactory <|... NYPizzaIngredientFactory
+PizzaIngredientFactory <|... ChicagoPizzaIngredientFactory
+
+Sauce <|.. TomatoSauce
+Sauce <|.. SweetTomatoSauce
+Cheese <|.. MozzarellaCheese
+Cheese <|.. KoreaCheese
+
+NYPizzaIngredientFactory ..> TomatoSauce
+NYPizzaIngredientFactory ..> MozzarellaCheese
+ChicagoPizzaIngredientFactory ..> SweetTomatoSauce
+ChicagoPizzaIngredientFactory ..> KoreaCheese
+
+NYPizzaStore -> Sauce
+NYPizzaStore --> Cheese
+NYPizzaStore --> Veggies
+NYPizzaStore --> PizzaIngredientFactory
+
+note right of NYPizzaStore
+Pizza店的两个具体实例
+（NYPizzaStore、ChicagoPizzaStore）
+是抽象工厂的客户
+end note
+
+note right of PizzaIngredientFactory
+这是抽象的Pizza原料工厂接口，
+它定义了如何产生一个相关产品的家族。
+这个家族包含了所有制作Pizza的原料。
+end note
+
+
+note as N1
+这些具体原料工厂类
+负责生产Pizza原料，
+每个工厂都知道如何
+产生符合自己区域的正确对象
+end note
+
+N1 .. NYPizzaIngredientFactory
+N1 .. ChicagoPizzaIngredientFactory
+
+
+
+
+
+
+
+
+@enduml

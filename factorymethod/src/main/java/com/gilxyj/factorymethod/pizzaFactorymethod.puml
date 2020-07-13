@@ -1,0 +1,61 @@
+@startuml
+
+interface PizzaStore{
+    # Pizza createPizza(String type)
+}
+
+interface Pizza
+
+class ChicagoPizzaStore{
+    + Pizza createPizza(String type)
+}
+
+class NYPizzaStore{
+    + Pizza createPizza(String type)
+}
+
+class OrderPizza{
+    - PizzaStore pizzaStore
+    - Pizza pizza
+
+    + void main()
+
+}
+
+class ChicagoCheesePizza
+class ChicagoGreekPizza
+class ChicagoPepperPizza
+
+class NYCheesePizza
+class NYGreekPizza
+class NYPepperPizza
+
+
+PizzaStore .>  Pizza: createPizza
+PizzaStore <|.. ChicagoPizzaStore
+PizzaStore <|.. NYPizzaStore
+
+Pizza <|... ChicagoCheesePizza
+Pizza <|... ChicagoGreekPizza
+Pizza <|... ChicagoPepperPizza
+
+Pizza <|... NYCheesePizza
+Pizza <|... NYGreekPizza
+Pizza <|... NYPepperPizza
+
+OrderPizza -> PizzaStore
+OrderPizza -> Pizza
+
+
+
+
+
+
+
+
+
+
+
+
+
+@enduml

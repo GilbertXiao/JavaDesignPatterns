@@ -1,0 +1,69 @@
+@startuml
+
+interface Creator{
+    + ProductA factoryA()
+    + ProductB factoryB()
+}
+
+interface ProductA
+interface ProductB
+
+class ConcreteCreator1{
+    + ProductA factoryA()
+    + ProductB factoryB()
+}
+
+class ConcreteCreator2{
+    + ProductA factoryA()
+    + ProductB factoryB()
+}
+
+class Client{
+    - Creator creator1
+    - Creator creator2
+    - ProductA productA
+    - ProductB productB
+
+    + void main()
+
+}
+
+class ConcreteProductA1
+class ConcreteProductA2
+class ConcreteProductB1
+class ConcreteProductB2
+
+
+
+
+
+Creator <|.. ConcreteCreator1
+Creator <|.. ConcreteCreator2
+
+ProductA <|.. ConcreteProductA1
+ProductA <|.. ConcreteProductA2
+ProductB <|.. ConcreteProductB1
+ProductB <|.. ConcreteProductB2
+
+ConcreteCreator1 ..> ConcreteProductA1
+ConcreteCreator1 ..> ConcreteProductB1
+ConcreteCreator2 .> ConcreteProductA2
+ConcreteCreator2 .> ConcreteProductB2
+
+Client -> Creator
+Client --> ProductA
+Client --> ProductB
+
+
+
+
+
+
+
+
+
+
+
+
+
+@enduml

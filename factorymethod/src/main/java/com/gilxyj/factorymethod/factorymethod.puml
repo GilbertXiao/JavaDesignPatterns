@@ -1,0 +1,54 @@
+@startuml
+
+interface Creator{
+    + Product factory()
+}
+
+interface Product
+
+class ConcreteCreator1{
+    + Product factory()
+}
+
+class ConcreteCreator2{
+    + Product factory()
+}
+
+class Client{
+    - Creator creator1
+    - Creator creator2
+    - Product product1
+    - Product product2
+
+    + void main()
+
+}
+
+class ConcreteProduct1
+class ConcreteProduct2
+
+
+
+Creator .>  Product: Create
+Creator <|.. ConcreteCreator1
+Creator <|.. ConcreteCreator2
+
+Product <|.. ConcreteProduct1
+Product <|.. ConcreteProduct2
+
+Client -> Creator
+Client -> Product
+
+
+
+
+
+
+
+
+
+
+
+
+
+@enduml
