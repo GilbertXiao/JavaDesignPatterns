@@ -1,0 +1,15 @@
+@startuml
+
+class Money{
+    - String name
+    - Integer age
+    - String color
+
+}
+
+Class Client
+
+Client -> Money
+
+
+@enduml

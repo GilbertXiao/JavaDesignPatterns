@@ -14,3 +14,4 @@
 |单例原则|singleton|
 |工厂方法模式|factorymethod|
 |抽象工厂模式|abstractfactory|
+|原型模式|prototype|
